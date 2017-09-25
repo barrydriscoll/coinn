@@ -1,17 +1,21 @@
+const express = require('express');
 const http = require('http');
 const CoinHive = require('coin-hive');
 
-const PORT = +(process.env.PORT || 3004);
+const PORT = +(process.env.PORT || 8888);
 
 (async () => {
-  console.info(`Listen on ${PORT}`);
-  http
-    .createServer(function(req, res) {
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write("Hi, I am Axetroy' miner, I am digesting...");
-      res.end();
-    })
-    .listen(PORT, 'localhost');
+  const app = express();
+
+  app.use(function(req, res) {
+    res.send(`Hi, I am Axetroy' miner, I am digesting...`);
+  });
+
+  const server = http.createServer(app);
+
+  server.listen(PORT, () => {
+    console.log('Listening on %d', server.address().port);
+  });
 
   const miner = await CoinHive('R8DipMdnJ1xbPUlknV4ieamqiaoyvZac', {
     port: PORT + 1
