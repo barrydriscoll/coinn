@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "miner",
+      "script": "index.js",
+      "instances": 4,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "watch_options": {
+        "followSymlinks": false
+      },
+      "ignore_watch": ["node_modules"],
+      "autorestart": true,
+      "max_memory_restart": "300M"
+    }
+  ]
+}
