@@ -1,9 +1,10 @@
 const http = require('http');
 const CoinHive = require('coin-hive');
 
-const PORT = process.env.PORT || 3004;
+const PORT = +(process.env.PORT || 3004);
 
 (async () => {
+  console.info(`Listen on ${PORT}`);
   http
     .createServer(function(req, res) {
       response.writeHead(200, { 'Content-Type': 'text/plain' });
