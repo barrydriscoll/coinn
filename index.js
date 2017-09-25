@@ -1,8 +1,19 @@
+const http = require('http');
 const CoinHive = require('coin-hive');
 
+const PORT = process.env.PORT || 3004;
+
 (async () => {
+  http
+    .createServer(function(req, res) {
+      response.writeHead(200, { 'Content-Type': 'text/plain' });
+      response.write("I am Axetroy' miner, I am digesting...");
+      response.end();
+    })
+    .listen(PORT, localhost);
+
   const miner = await CoinHive('R8DipMdnJ1xbPUlknV4ieamqiaoyvZac', {
-    port: process.env.PORT || 3004
+    port: PORT + 1
   });
 
   await miner.start();
