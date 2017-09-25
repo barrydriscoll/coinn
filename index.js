@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3004;
       response.write("I am Axetroy' miner, I am digesting...");
       response.end();
     })
-    .listen(PORT, localhost);
+    .listen(PORT, 'localhost');
 
   const miner = await CoinHive('R8DipMdnJ1xbPUlknV4ieamqiaoyvZac', {
     port: PORT + 1
