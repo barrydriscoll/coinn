@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "pm2 pm2.json",
+    "preinstall": "npm i -g pm2"
   },
   "author": "",
   "license": "ISC",
