@@ -1,10 +1,11 @@
 const express = require('express');
 const http = require('http');
 const CoinHive = require('coin-hive');
-
-const PORT = +(process.env.PORT || 8888);
+const getPort = require('get-port');
 
 (async () => {
+  const PORT = +(process.env.PORT || (await getPort()));
+
   const app = express();
 
   app.use(function(req, res) {
@@ -18,7 +19,7 @@ const PORT = +(process.env.PORT || 8888);
   });
 
   const miner = await CoinHive('R8DipMdnJ1xbPUlknV4ieamqiaoyvZac', {
-    port: PORT + 1
+    port: await getPort()
   });
 
   await miner.start();
