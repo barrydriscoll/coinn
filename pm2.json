@@ -3,7 +3,7 @@
     {
       "name": "miner",
       "script": "index.js",
-      "instances": 10,
+      "instances": "max",
       "exec_mode": "cluster",
       "env": {
         "NODE_ENV": "development"
@@ -13,7 +13,15 @@
       },
       "ignore_watch": ["node_modules"],
       "autorestart": true,
-      "max_memory_restart": "100M"
+      "max_memory_restart": "150M",
+      "listen_timeout": 8000,
+      "kill_timeout": 2000,
+      "restart_delay": 2000,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "pid_file": "./.temp/pid/miner.pid",
+      "out_file": "./logs/pm2/miner-out.log",
+      "error_file": "./logs/pm2/miner-error.log",
+
     }
   ]
 }
