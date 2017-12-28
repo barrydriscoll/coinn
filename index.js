@@ -24,4 +24,6 @@ const getPort = require("get-port");
     Accepted hashes: ${data.acceptedHashes}
   `);
   });
-})();
+})().catch(err => {
+  console.error(err);
+});
