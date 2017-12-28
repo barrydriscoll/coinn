@@ -3,7 +3,7 @@
     {
       "name": "miner",
       "script": "index.js",
-      "instances": "max",
+      "instances": "5",
       "exec_mode": "cluster",
       "env": {
         "NODE_ENV": "development"
@@ -13,7 +13,7 @@
       },
       "ignore_watch": ["node_modules"],
       "autorestart": true,
-      "max_memory_restart": "150M",
+      "max_memory_restart": "100M",
       "listen_timeout": 8000,
       "kill_timeout": 2000,
       "restart_delay": 2000,

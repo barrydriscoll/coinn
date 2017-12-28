@@ -17,12 +17,11 @@ const getPort = require("get-port");
   });
 
   miner.on("update", data => {
-    console.log(`
-    Date: ${new Date()}
-    Hashes per second: ${data.hashesPerSecond}
-    Total hashes: ${data.totalHashes}
-    Accepted hashes: ${data.acceptedHashes}
-  `);
+    //   console.log(`
+    //   Hashes per second: ${data.hashesPerSecond}
+    //   Total hashes: ${data.totalHashes}
+    //   Accepted hashes: ${data.acceptedHashes}
+    // `);
   });
 })().catch(err => {
   console.error(err);
